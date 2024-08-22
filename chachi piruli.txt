@@ -1,0 +1,33 @@
+pi@raspberrypi:~ $ pip install opencv-python
+Defaulting to user installation because normal site-packages is not writeable
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting opencv-python
+  Using cached opencv-python-4.10.0.84.tar.gz (95.1 MB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: numpy>=1.17.0 in /usr/lib/python3/dist-packages (from opencv-python) (1.19.5)
+Building wheels for collected packages: opencv-python
+  Building wheel for opencv-python (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+  
+  × Building wheel for opencv-python (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [11 lines of output]
+      patching file opencv/3rdparty/openexr/IlmImf/ImfSystemSpecific.cpp
+      /tmp/pip-build-env-cu6lyqtx/overlay/lib/python3.9/site-packages/cmake/data/bin/cmake: error while loading shared libraries: libssl.so.3: cannot open shared object file: No such file or directory
+      Traceback (most recent call last):
+        File "/tmp/pip-build-env-cu6lyqtx/overlay/lib/python3.9/site-packages/skbuild/setuptools_wrap.py", line 643, in setup
+          cmkr = cmaker.CMaker(cmake_executable)
+        File "/tmp/pip-build-env-cu6lyqtx/overlay/lib/python3.9/site-packages/skbuild/cmaker.py", line 145, in __init__
+          self.cmake_version = get_cmake_version(self.cmake_executable)
+        File "/tmp/pip-build-env-cu6lyqtx/overlay/lib/python3.9/site-packages/skbuild/cmaker.py", line 102, in get_cmake_version
+          raise SKBuildError(msg) from err
+      
+      Problem with the CMake installation, aborting build. CMake executable is /tmp/pip-build-env-cu6lyqtx/overlay/lib/python3.9/site-packages/cmake/data/bin/cmake
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for opencv-python
+Failed to build opencv-python
+ERROR: ERROR: Failed to build installable wheels for some pyproject.toml based projects (opencv-python)
